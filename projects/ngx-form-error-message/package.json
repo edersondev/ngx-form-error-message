@@ -1,6 +1,23 @@
 {
-  "name": "ngx-form-error-message",
-  "version": "0.0.1",
+  "name": "@edersondev/ngx-form-error-message",
+  "version": "1.0.0",
+  "description":"Este pacote serve para controlar as mensagens de erro do formulário reativo do angular",
+  "author": "Ederson Ferreira (ederson.dev@gmail.com)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/edersondev/ngx-form-error-message.git"
+  },
+  "bugs": {
+    "url": "https://github.com/edersondev/ngx-form-error-message/issues"
+  },
+  "homepage": "https://github.com/edersondev/ngx-form-error-message",
+  "keywords": [
+    "angular",
+    "form",
+    "control-error",
+    "form-errors"
+  ],
+  "license": "MIT",
   "peerDependencies": {
     "@angular/common": "^12.2.0",
     "@angular/core": "^12.2.0"
