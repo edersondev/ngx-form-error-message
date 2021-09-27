@@ -1,6 +1,6 @@
 {
   "name": "@edersondev/ngx-form-error-message",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description":"Este pacote serve para controlar as mensagens de erro do formulário reativo do angular",
   "author": "Ederson Ferreira (ederson.dev@gmail.com)",
   "repository": {

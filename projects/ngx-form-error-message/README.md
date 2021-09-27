@@ -1,24 +1,35 @@
 # NgxFormErrorMessage
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.0.
+Está biblioteca foi gerada com angular cli versão 12.2.6 e tem como objetivo controlar as mensagens de erro do formulário reativo do angular.
 
-## Code scaffolding
+## Instalação
 
-Run `ng generate component component-name --project ngx-form-error-message` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project ngx-form-error-message`.
-> Note: Don't forget to add `--project ngx-form-error-message` or else it will be added to the default project in your `angular.json` file. 
+Abra o terminal e execute o seguinte comando dentro do seu projeto:
 
-## Build
+    npm i @edersondev/ngx-form-error-message --save
 
-Run `ng build ngx-form-error-message` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Como usar
+Dentro do seu arquivo de módulo faça a importação do módulo:
 
-## Publishing
+    import { NgxFormErrorMessageModule } from '@edersondev/ngx-form-error-message';
+E adicione NgxFormErrorMessageModule na propriedade *imports*.
 
-After building your library with `ng build ngx-form-error-message`, go to the dist folder `cd dist/ngx-form-error-message` and run `npm publish`.
+## Exemplo de uso
+Dentro do componente instancie um formulário e adicione um campo com validação:
 
-## Running unit tests
+    form:FormGroup;
+    constructor(private  _fb:FormBuilder) { }
+    ngOnInit() {
+	    this.form = this._fb.group({
+		    nome:[null,[Validators.required, Validators.minLength(3), Validators.maxLength(10)]],
+	    });
+    }
+E no html ficaria da seguinte forma:
 
-Run `ng test ngx-form-error-message` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+    <form  [formGroup]="form">
+    <mat-form-field>
+	    <input  formControlName="nome"  matInput  placeholder="Nome completo">
+	    <mat-error  [errorMessage]="form.get('nome')"></mat-error>
+	</mat-form-field>
+    </form>
+A tag mat-error recebe a diretiva errorMessage que deve receber um formControl.
